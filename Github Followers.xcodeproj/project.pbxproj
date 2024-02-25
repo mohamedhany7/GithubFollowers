@@ -12,7 +12,7 @@
 		200097D72B827A26002BFB3F /* SearchVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 200097D62B827A26002BFB3F /* SearchVC.swift */; };
 		200097DC2B827A27002BFB3F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 200097DB2B827A27002BFB3F /* Assets.xcassets */; };
 		200097DF2B827A27002BFB3F /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 200097DD2B827A27002BFB3F /* LaunchScreen.storyboard */; };
-		202CED232B8AB8B500477AB5 /* ErrorMessage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 202CED222B8AB8B500477AB5 /* ErrorMessage.swift */; };
+		202CED232B8AB8B500477AB5 /* GFError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 202CED222B8AB8B500477AB5 /* GFError.swift */; };
 		20A25CC02B88315000F3FEE7 /* Follower.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20A25CBF2B88315000F3FEE7 /* Follower.swift */; };
 		20A25CC22B88323E00F3FEE7 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20A25CC12B88323E00F3FEE7 /* User.swift */; };
 		20A25CC52B883D9600F3FEE7 /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20A25CC42B883D9600F3FEE7 /* NetworkManager.swift */; };
@@ -35,7 +35,7 @@
 		200097DB2B827A27002BFB3F /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		200097DE2B827A27002BFB3F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		200097E02B827A27002BFB3F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		202CED222B8AB8B500477AB5 /* ErrorMessage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ErrorMessage.swift; sourceTree = "<group>"; };
+		202CED222B8AB8B500477AB5 /* GFError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GFError.swift; sourceTree = "<group>"; };
 		20A25CBF2B88315000F3FEE7 /* Follower.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Follower.swift; sourceTree = "<group>"; };
 		20A25CC12B88323E00F3FEE7 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		20A25CC42B883D9600F3FEE7 /* NetworkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkManager.swift; sourceTree = "<group>"; };
@@ -95,7 +95,7 @@
 		202CED212B8AB87700477AB5 /* Utilities */ = {
 			isa = PBXGroup;
 			children = (
-				202CED222B8AB8B500477AB5 /* ErrorMessage.swift */,
+				202CED222B8AB8B500477AB5 /* GFError.swift */,
 				20A325A02B83E30E00D741C0 /* Constants.swift */,
 			);
 			path = Utilities;
@@ -229,7 +229,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				202CED232B8AB8B500477AB5 /* ErrorMessage.swift in Sources */,
+				202CED232B8AB8B500477AB5 /* GFError.swift in Sources */,
 				20A3259F2B83DE0200D741C0 /* GFTextField.swift in Sources */,
 				20A3259B2B83D3C600D741C0 /* FavoritesListVC.swift in Sources */,
 				20E400B62B84CCD600855414 /* UIViewController+Ext.swift in Sources */,
