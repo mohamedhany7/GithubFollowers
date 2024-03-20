@@ -20,7 +20,6 @@ class SearchVC: UIViewController {
         super.viewDidLoad()
         view.backgroundColor = .systemBackground
         createDismissKeyboardTapGesture()
-        
         configureLogoImageView()
         configureTextField()
         configureGetFollowersButton()
