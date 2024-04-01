@@ -7,6 +7,11 @@
 
 import UIKit
 
+protocol UserInfoVCDelegate {
+    func didTapGitHubProfile()
+    func didTapGetFollowers()
+}
+
 class UserInfoVC: UIViewController {
     
     let headerView = UIView()
@@ -36,17 +41,25 @@ class UserInfoVC: UIViewController {
             
             switch result{
             case .success(let user):
-                DispatchQueue.main.async {
-                    self.add(childVC: GFUserInfoHeaderVC(user: user), to: self.headerView)
-                    self.add(childVC: GFRepoItemVC(user: user), to: self.iteamViewOne)
-                    self.add(childVC: GFFollowerItemVC(user: user), to: self.itemViewTwo)
-                    self.dateLabel.text = "Github since \(user.createdAt.convertDateToDisplayFormat())"
-                }
+                DispatchQueue.main.async { self.configureUIElements(with: user) }
                 
             case .failure(let error):
                 self.presentGFAlertOnMainThread(alertTitle: "Something went wrong.", messageTitle: error.rawValue, buttonTitle: "Ok")
             }
         }
+    }
+    
+    private func configureUIElements (with user: User){
+        let repoItemVC = GFRepoItemVC(user: user)
+        repoItemVC.delegate = self
+        
+        let followerItemVC = GFFollowerItemVC(user: user)
+        followerItemVC.delegate = self
+        
+        self.add(childVC: GFUserInfoHeaderVC(user: user), to: self.headerView)
+        self.add(childVC: repoItemVC, to: self.iteamViewOne)
+        self.add(childVC: followerItemVC, to: self.itemViewTwo)
+        self.dateLabel.text = "Github since \(user.createdAt.convertDateToDisplayFormat())"
     }
     
     private func layoutUI(){
@@ -87,5 +100,16 @@ class UserInfoVC: UIViewController {
     
     @objc private func dismissVC() {
         dismiss(animated: true)
+    }
+}
+
+extension UserInfoVC: UserInfoVCDelegate {
+    func didTapGitHubProfile() {
+        print("It's working")
+    }
+    
+    func didTapGetFollowers() {
+        // dismiss vc
+        // tell follower list screen the new user 
     }
 }
