@@ -56,7 +56,7 @@ enum PresistenceManager {
         do{
             let encoder = JSONEncoder()
             let encodedFavorites = try encoder.encode(favorites)
-            defaults.set(favorites, forKey: Presistencekeys.favorites)
+            defaults.set(encodedFavorites, forKey: Presistencekeys.favorites)
             return nil
         } catch {
             return GFError.unableToFavorite
