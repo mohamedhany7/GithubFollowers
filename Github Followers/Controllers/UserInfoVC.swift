@@ -105,7 +105,12 @@ class UserInfoVC: UIViewController {
 
 extension UserInfoVC: UserInfoVCDelegate {
     func didTapGitHubProfile(for user: User) {
+        guard let url = URL(string: user.htmlUrl) else {
+            presentGFAlertOnMainThread(alertTitle: "Invalid URL", messageTitle: "The url attached to this user is invalid", buttonTitle: "OK")
+            return
+        }
         
+        presentSafariVC(with: url)
     }
     
     func didTapGetFollowers(for user: User) {
