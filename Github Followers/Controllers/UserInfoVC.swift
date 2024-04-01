@@ -8,8 +8,8 @@
 import UIKit
 
 protocol UserInfoVCDelegate {
-    func didTapGitHubProfile()
-    func didTapGetFollowers()
+    func didTapGitHubProfile(for user: User)
+    func didTapGetFollowers(for user: User)
 }
 
 class UserInfoVC: UIViewController {
@@ -104,12 +104,12 @@ class UserInfoVC: UIViewController {
 }
 
 extension UserInfoVC: UserInfoVCDelegate {
-    func didTapGitHubProfile() {
-        print("It's working")
+    func didTapGitHubProfile(for user: User) {
+        
     }
     
-    func didTapGetFollowers() {
+    func didTapGetFollowers(for user: User) {
         // dismiss vc
-        // tell follower list screen the new user 
+        // tell follower list screen the new user
     }
 }
