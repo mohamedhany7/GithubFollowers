@@ -19,3 +19,7 @@ struct SFSymbols {
     static let followers = "heart"
     static let following = "person.2"
 }
+
+struct Presistencekeys {
+    static let favorites = "favorites"
+}
