@@ -10,6 +10,7 @@ struct K {
     static let emptyStateLogo = "empty-state-logo"
     static let avatar = "avatar-placeholder"
     static let FollowerCellReuseID = "FollowerCell"
+    static let FavoriteCellReuseID = "FavoriteCell"
 }
 
 struct SFSymbols {
