@@ -24,6 +24,16 @@ class FollowerListVC: UIViewController {
     var collectionView: UICollectionView!
     var dataSource: UICollectionViewDiffableDataSource<Section,Follower>!
     
+    init(username: String){
+        super.init(nibName: nil, bundle: nil)
+        self.username = username
+        title = username
+    }
+    
+    required init?(coder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         configureViewController()
@@ -140,7 +150,7 @@ extension FollowerListVC: UICollectionViewDelegate{
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         let activeArray = isSearching ? fillteredFollowers : followers
-        let follower = activeArray[indexPath.item]
+        let follower = activeArray[indexPath.row]
         let destVC = UserInfoVC()
         destVC.username = follower.login
         destVC.delegate = self
@@ -170,7 +180,10 @@ extension FollowerListVC: FollowerListVCDelegate{
         page = 1
         followers.removeAll()
         fillteredFollowers.removeAll()
-        collectionView.reloadData()
+        //add scroll to top
+        DispatchQueue.main.async {
+            self.collectionView.reloadData()
+        }
         fetchUsers(username: username, page: page)
     }
 }
